@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Christmas Santa Animation</title>
+  <style>
+    body {
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .santa-container {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: santa-move 5s linear infinite;
+    }
+
+    .santa {
+      width: 200px;
+      height: 200px;
+      background-image: url('https://imgur.com/m4jJSSt.png'); /* Replace with the path to your Santa image */
+      background-size: contain;
+      background-repeat: no-repeat;
+      /* Add this keyframes animation for bouncing */
+      animation: santa-bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes santa-wave {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(10deg); }
+    }
+
+    @keyframes santa-move {
+      0% { bottom: 0; }
+      50% { bottom: 50px; }
+      100% { bottom: 0; }
+    }
+
+    /* Add this keyframes animation for bouncing */
+    @keyframes santa-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="santa-container">
+    <div class="santa"></div>
+  </div>
+</body>
+</html>
